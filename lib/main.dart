@@ -37,8 +37,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'IHB',
          theme: lightTheme,
-        // darkTheme:CustomTheme.darkTheme, // standard dark theme
-        //themeMode: lightTheme,
         routeInformationParser: AppRouter.route.routeInformationParser,
         routerDelegate: AppRouter.route.routerDelegate,
         routeInformationProvider: AppRouter.route.routeInformationProvider,

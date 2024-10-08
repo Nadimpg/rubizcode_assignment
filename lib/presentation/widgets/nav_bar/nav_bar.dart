@@ -72,21 +72,21 @@ class _NavBarState extends State<NavBar> {
   void onTap(int index) {
     if (index == 0) {
       if (!(widget.currentIndex == 0)) {
-        context.pushReplacementNamed(RoutePath.homeScreen);
+        context.pushNamed(RoutePath.homeScreen);
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
-        context.pushReplacementNamed(RoutePath.articleScreen);
+        context.pushNamed(RoutePath.articleScreen);
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {
-        context.pushReplacementNamed(RoutePath.notifications);
+        context.pushNamed(RoutePath.notifications);
       }
     }
     //
     else if (index == 3) {
       if (!(widget.currentIndex == 3)) {
-        context.pushReplacementNamed(RoutePath.profileScreen);
+        context.pushNamed(RoutePath.profileScreen);
       }
     }
   }
