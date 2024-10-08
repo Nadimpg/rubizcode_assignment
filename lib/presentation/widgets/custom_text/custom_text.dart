@@ -49,7 +49,7 @@ class CustomText extends StatelessWidget {
         text,
         maxLines: maxLines,
         overflow: overflow,
-        style: GoogleFonts.poppins(
+        style: GoogleFonts.roboto(
           fontSize: fontSizeValue,
           fontWeight: fontWeight,
           color: color,

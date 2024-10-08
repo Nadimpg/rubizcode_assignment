@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:rubizcode_assignment/core/routes/route_path.dart';
 import 'package:rubizcode_assignment/helper/extension/base_extension.dart';
 import 'package:rubizcode_assignment/presentation/screens/artice/article_screen.dart';
-import 'package:rubizcode_assignment/presentation/screens/home/home_screen.dart';
+import 'package:rubizcode_assignment/presentation/screens/home/home/home_screen.dart';
 import 'package:rubizcode_assignment/presentation/screens/notifications/notifications.dart';
 import 'package:rubizcode_assignment/presentation/screens/profile/profile_screen.dart';
 
@@ -17,7 +17,7 @@ class AppRouter {
         GoRoute(
           name: RoutePath.homeScreen,
           path: RoutePath.homeScreen.addBasePath,
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) => HomeScreen(),
         ),
 
         ///======================= article Route =======================
