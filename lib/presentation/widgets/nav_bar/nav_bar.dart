@@ -40,7 +40,7 @@ class _NavBarState extends State<NavBar> {
       margin: const EdgeInsets.only(
         bottom: 8,
       ),
-      height: 70.h,
+      height: 56.h,
       width: MediaQuery.of(context).size.width,
 
       alignment: Alignment.center,
