@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: NavBar(currentIndex: 0),
       body: Obx(() => Padding(
-        padding: EdgeInsets.symmetric(vertical: 44.h, horizontal: 20.w),
+        padding: EdgeInsets.only(left: 20.w,right: 20.w,top: 44.h),
         child: Column(
           children: [
             ///<======================= daily topper images ============================>

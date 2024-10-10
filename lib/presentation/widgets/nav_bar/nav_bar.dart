@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rubizcode_assignment/core/app_routes/app_routes.dart';
 import 'package:rubizcode_assignment/core/custom_assets/assets.gen.dart';
+import 'package:rubizcode_assignment/utils/app_colors/app_colors.dart';
 
 class NavBar extends StatefulWidget {
   final int currentIndex;
@@ -35,11 +36,12 @@ class _NavBarState extends State<NavBar> {
       padding: EdgeInsets.symmetric(horizontal: 12.w),
       decoration: const BoxDecoration(
           color: Color(0xffFFFFFF),
-          border: Border(top: BorderSide(color: Color(0xffB1B1B1)))),
+          border: Border(top: BorderSide(color: Colors.grey))
+      ),
       margin: const EdgeInsets.only(
         bottom: 8,
       ),
-      height: 56.h,
+      height: 70.h,
       width: MediaQuery.of(context).size.width,
 
       alignment: Alignment.center,
@@ -49,7 +51,7 @@ class _NavBarState extends State<NavBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           selectedIcon.length,
-          (index) => InkWell(
+              (index) => InkWell(
             onTap: () => onTap(index),
             child: Container(
               decoration: const BoxDecoration(),
@@ -59,6 +61,7 @@ class _NavBarState extends State<NavBar> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   selectedIcon[index],
+
                 ],
               ),
             ),
