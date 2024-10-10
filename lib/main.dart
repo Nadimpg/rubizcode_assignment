@@ -1,9 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:rubizcode_assignment/core/app_routes/app_routes.dart';
 import 'package:rubizcode_assignment/utils/system_utils/system_utils.dart';
-import 'core/routes/routes.dart';
 import 'core/theme/light_theme.dart';
 import 'dependency_injection/getx_injection.dart';
 import 'dependency_injection/path.dart';
@@ -31,13 +30,15 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       useInheritedMediaQuery: true,
       // splitScreenMode: true,
-      builder: (context, child) => GetMaterialApp.router(
+      builder: (context, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'IHB',
          theme: lightTheme,
-        routeInformationParser: AppRouter.route.routeInformationParser,
-        routerDelegate: AppRouter.route.routerDelegate,
-        routeInformationProvider: AppRouter.route.routeInformationProvider,
+        defaultTransition: Transition.fadeIn,
+        transitionDuration: const Duration(milliseconds: 200),
+        initialRoute: AppRoute.homeScreen,
+        navigatorKey: Get.key,
+        getPages: AppRoute.routes,
       ),
     );
   }

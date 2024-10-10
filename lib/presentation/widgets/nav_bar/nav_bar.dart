@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
+import 'package:rubizcode_assignment/core/app_routes/app_routes.dart';
 import 'package:rubizcode_assignment/core/custom_assets/assets.gen.dart';
-import 'package:rubizcode_assignment/core/routes/route_path.dart';
 
 class NavBar extends StatefulWidget {
   final int currentIndex;
@@ -16,12 +16,11 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   var bottomNavIndex = 0;
 
-
   List<Widget> selectedIcon = [
     Assets.icons.homeFilled.svg(),
     Assets.icons.article.svg(),
     Assets.icons.notifications.svg(),
-    Assets.icons.profile.svg(),
+    Assets.images.profile.image(height: 24.h, width: 24.w),
   ];
 
   @override
@@ -59,7 +58,7 @@ class _NavBarState extends State<NavBar> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                 selectedIcon[index]  ,
+                  selectedIcon[index],
                 ],
               ),
             ),
@@ -72,21 +71,21 @@ class _NavBarState extends State<NavBar> {
   void onTap(int index) {
     if (index == 0) {
       if (!(widget.currentIndex == 0)) {
-        context.pushNamed(RoutePath.homeScreen);
+        Get.offAllNamed(AppRoute.homeScreen);
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
-        context.pushNamed(RoutePath.articleScreen);
+        Get.offAllNamed(AppRoute.articleCScreen);
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {
-        context.pushNamed(RoutePath.notifications);
+        Get.offAllNamed(AppRoute.notifications);
       }
     }
     //
     else if (index == 3) {
       if (!(widget.currentIndex == 3)) {
-        context.pushNamed(RoutePath.profileScreen);
+        Get.offAllNamed(AppRoute.profileScreen);
       }
     }
   }

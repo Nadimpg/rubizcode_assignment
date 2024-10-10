@@ -2,10 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
-import 'package:rubizcode_assignment/core/routes/route_path.dart';
+import 'package:rubizcode_assignment/core/app_routes/app_routes.dart';
 import 'package:rubizcode_assignment/dependency_injection/path.dart';
 import 'package:rubizcode_assignment/helper/local_db/local_db.dart';
 import 'package:rubizcode_assignment/helper/tost_message/show_snackbar.dart';
@@ -84,7 +85,7 @@ class ApiMethod {
 
       if (context != null && context.mounted) {
         showSnackBar(context, 'Check your Internet Connection and try again!');
-        context.pushNamed(RoutePath.errorScreen);
+        Get.toNamed(AppRoute.errorScreen);
       }
       return null;
     } on TimeoutException {
@@ -94,7 +95,7 @@ class ApiMethod {
 
       if (context != null && context.mounted) {
         showSnackBar(context, 'Check your Internet Connection and try again!');
-        context.pushNamed(RoutePath.errorScreen);
+        Get.toNamed(AppRoute.errorScreen);
       }
 
       return null;
@@ -107,7 +108,7 @@ class ApiMethod {
 
       log.e(stackrace.toString());
       if (context != null && context.mounted) {
-        context.pushNamed(RoutePath.errorScreen);
+        Get.toNamed(AppRoute.errorScreen);
       }
       return null;
     } catch (e) {
@@ -117,7 +118,7 @@ class ApiMethod {
 
       log.e("❌❌❌ $e");
       if (context != null && context.mounted) {
-        context.pushNamed(RoutePath.errorScreen);
+        Get.toNamed(AppRoute.errorScreen);
       }
       return null;
     }

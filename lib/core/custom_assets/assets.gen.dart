@@ -89,6 +89,9 @@ class $AssetsImagesGen {
   AssetGenImage get politics =>
       const AssetGenImage('assets/images/politics.png');
 
+  /// File path: assets/images/profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
+
   /// File path: assets/images/sports.png
   AssetGenImage get sports => const AssetGenImage('assets/images/sports.png');
 
@@ -102,6 +105,7 @@ class $AssetsImagesGen {
         international,
         national,
         politics,
+        profile,
         sports
       ];
 }

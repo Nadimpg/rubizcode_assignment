@@ -5,31 +5,38 @@ import 'package:rubizcode_assignment/core/custom_assets/assets.gen.dart';
 import 'package:rubizcode_assignment/utils/AppImg/app_img.dart';
 import 'package:rubizcode_assignment/utils/static_strings/static_strings.dart';
 
-class HomeController extends GetxController{
-  RxInt selectedIndex=0.obs;
+class HomeController extends GetxController {
+  RxInt selectedIndex = 0.obs;
   final ScrollController scrollController = ScrollController();
 
-  ///<=========================== categoris image list ============================>
-  RxList<String> categories = RxList<String>([
-    AppImages.national,
-    AppImages.international,
-    AppImages.politics,
-    AppImages.finance,
-    AppImages.entertainment,
+  ///<=========================== categorises list ============================>
+  RxList<RxMap<String, dynamic>> categories = RxList<RxMap<String, dynamic>>([
+    {
+      'image': AppImages.national,
+      'name': 'National',
+    }.obs,
+    {
+      'image': AppImages.international,
+      'name': 'International',
+    }.obs,
+    {
+      'image': AppImages.politics,
+      'name': 'Politics',
+    }.obs,
+    {
+      'image': AppImages.finance,
+      'name': 'Finance',
+    }.obs,
+    {
+      'image': AppImages.entertainment,
+      'name': 'Entertainment',
+    }.obs,
   ]);
   RxList<int> currentNewsIndex = RxList<int>.generate(5, (index) => 0);
 
-  ///<=========================== categoris Name list ============================>
-  RxList<String> categoriesName = RxList<String>([
-    'National',
-    'International',
-    'Politics',
-    'Finance',
-    'Entertainment',
-  ]);
-
-///<=========================== Define a list of maps directly =========================>
-  RxList<List<RxMap<String, dynamic>>> categoriesNews = <List<RxMap<String, dynamic>>>[
+  ///<=========================== Define a list of maps directly =========================>
+  RxList<List<RxMap<String, dynamic>>> categoriesNews =
+      <List<RxMap<String, dynamic>>>[
     [
       {
         'image': AppImages.dummyImage,
@@ -142,10 +149,73 @@ class HomeController extends GetxController{
     ],
   ].obs;
 
+  ///<=========================== categoris image list ============================>
+  RxList<RxMap<String, dynamic>> categoriesList = RxList<RxMap<String, dynamic>>([
+    {
+      'image': AppImages.national,
+      'name':  'National',
+    }.obs,
+    {
+      'image': AppImages.international,
+      'name': 'International',
+    }.obs,
+    {
+      'image': AppImages.politics,
+      'name': 'Politics',
+    }.obs,
+    {
+      'image': AppImages.finance,
+      'name': 'Finance',
+    }.obs,
+    {
+      'image': AppImages.entertainment,
+      'name':  'Entertainment',
+    }.obs,
+    {
+      'image': AppImages.national,
+      'name':  'National',
+    }.obs,
+    {
+      'image': AppImages.international,
+      'name': 'International',
+    }.obs,
+    {
+      'image': AppImages.politics,
+      'name': 'Politics',
+    }.obs,
+    {
+      'image': AppImages.finance,
+      'name': 'Finance',
+    }.obs,
+    {
+      'image': AppImages.entertainment,
+      'name':  'Entertainment',
+    }.obs,
+    {
+      'image': AppImages.national,
+      'name':  'National',
+    }.obs,
+    {
+      'image': AppImages.international,
+      'name': 'International',
+    }.obs,
+    {
+      'image': AppImages.politics,
+      'name': 'Politics',
+    }.obs,
+    {
+      'image': AppImages.finance,
+      'name': 'Finance',
+    }.obs,
+    {
+      'image': AppImages.entertainment,
+      'name':  'Entertainment',
+    }.obs,
+  ]);
+
   @override
   void dispose() {
     scrollController.dispose(); // Dispose the controller to avoid memory leaks
     super.dispose();
   }
-
 }

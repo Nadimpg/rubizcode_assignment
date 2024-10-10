@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:rubizcode_assignment/core/app_routes/app_routes.dart';
 import 'package:rubizcode_assignment/core/custom_assets/assets.gen.dart';
 import 'package:rubizcode_assignment/presentation/screens/home/home_controller/home_controller.dart';
 import 'package:rubizcode_assignment/presentation/widgets/custom_daily_topper/custom_daily_topper.dart';
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             Gap(44.h),
 
             ///<======================= categories && view all ============================>
-            _buildCategoryHeader(),
+            _buildCategoryHeader(context),
             Gap(16.h),
 
             ///<======================= categories list ============================>
@@ -67,7 +68,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryHeader() {
+  Widget _buildCategoryHeader(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -76,7 +77,9 @@ class HomeScreen extends StatelessWidget {
 
         ///<======================= view all button ============================>
         GestureDetector(
-          onTap: () {}, // Implement the view all action
+          onTap: () {
+            Get.toNamed(AppRoute.categoriesScreen);
+          }, // Implement the view all action
           child: Row(
             children: [
               CustomText(text: AppStrings.viewAll, fontSize: 20.h),
@@ -113,14 +116,14 @@ class HomeScreen extends StatelessWidget {
         children: [
           ///<======================= categories image ============================>
           CustomImage(
-            imageSrc: controller.categories[index],
+            imageSrc: controller.categories[index]['image'],
             imageType: ImageType.png,
             size: controller.selectedIndex.value == index ? 96.h : 76.h,
           ),
 
           ///<======================= categories name ============================>
           CustomText(
-            text: controller.categoriesName[index],
+            text: controller.categories[index]['name'],
             top: 8.h,
             fontSize: controller.selectedIndex.value == index ? 14.h : 12.h,
           ),
